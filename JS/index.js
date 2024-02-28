@@ -13,21 +13,21 @@ btns.forEach(btn => {
 // btn
 // 初期状態の設定（トレーナーエリアとスタッフエリアを非表示にする）
 
-staffArea.classList.add("hide");
+// "show"と"hide"のクラスを切り替える関数
+function toggleClasses(element, addClass, removeClass) {
+  element.classList.add(addClass);
+  element.classList.remove(removeClass);
+}
 
 // ボタンがクリックされた時の挙動を設定
 btns.forEach(function(btn, index) {
   btn.addEventListener("click", function() {
     if (index === 0) {  // "トレーナー"ボタンがクリックされた時
-      trainerArea.classList.remove("hide");
-      trainerArea.classList.add("show");
-      staffArea.classList.remove("show");
-      staffArea.classList.add("hide");
+      toggleClasses(trainerArea, "show", "hide");
+      toggleClasses(staffArea, "hide", "show");
     } else {  // "スタッフ"ボタンがクリックされた時
-      trainerArea.classList.remove("show");
-      trainerArea.classList.add("hide");
-      staffArea.classList.remove("hide");
-      staffArea.classList.add("show");
+      toggleClasses(trainerArea, "hide", "show");
+      toggleClasses(staffArea, "show", "hide");
     }
   });
 });
@@ -55,20 +55,15 @@ const swiper = new Swiper('.swiper', {
 document.addEventListener('DOMContentLoaded', function() {
   const accordionHeaders = document.querySelectorAll('.accordion_wrapper_menu');
   
-  accordionHeaders.forEach(function(accordionHeader) {
-    accordionHeader.addEventListener('click', function() {
-      accordionHeader.classList.toggle('active');
-      
-      const accordionContent = this.nextElementSibling;
-      accordionContent.style.height = accordionContent.scrollHeight + 'px';
-      
-      if (accordionContent.classList.contains('active')) {
-        accordionContent.style.height = '0px';
-      } else {
-        accordionContent.style.height = accordionContent.scrollHeight + 'px';
-      }
-      accordionContent.classList.toggle('active');
-    });
+  const toggleAccordion = (header) => {
+    const content = header.nextElementSibling;
+    content.style.height = content.classList.contains('active') ? '0px' : content.scrollHeight + 'px';
+    header.classList.toggle('active');
+    content.classList.toggle('active');
+  };
+
+  accordionHeaders.forEach((header) => {
+    header.addEventListener('click', () => toggleAccordion(header));
   });
 });
 
@@ -117,21 +112,24 @@ window.addEventListener('scroll', ()=>{
 })
 // headeranimation
 
-const SideBtn = document.getElementById('side-btn');
-window.addEventListener('scroll', ()=>{
-  const elementPosition = SideBtn.getBoundingClientRect().top;
-  if(elementPosition < window.innerHeight){
-    SideBtn.classList.add('.side');
-   }
+const sideBtn = document.getElementById('side-btn');
 
-})
-window.addEventListener('scroll', ()=> {
-   if(window.scrollY === 0){
-     SideBtn.classList.remove('.side');
-    } 
-   })
+// スクロールに応じてボタンの表示を切り替える関数
+const toggleSideButton = () => {
+  const elementPosition = sideBtn.getBoundingClientRect().top;
+  if (elementPosition < window.innerHeight) {
+    sideBtn.classList.add('side');
+  } else if (window.scrollY === 0) {
+    sideBtn.classList.remove('side');
+  }
+};
 
-   SideBtn.addEventListener('click', ()=>{
-    window.scrollTo(0, 0);
-   })
-//sidebtn
+// スクロールイベントに一つの関数を割り当て
+window.addEventListener('scroll', toggleSideButton);
+
+// ボタンクリックでページトップにスクロール
+sideBtn.addEventListener('click', () => {
+  window.scrollTo(0, 0);
+});
+
+// sideBtn のコメントは不要なので削除しました。

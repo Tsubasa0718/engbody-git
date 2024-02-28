@@ -1,0 +1,60 @@
+@use"../responsive/_responsive" as *;
+@use"../conpornet/_btn.scss";
+
+.header{
+  transition: .5s;
+ &__wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem;
+ }
+ 
+ &__title{
+   letter-spacing: 0.05em;
+    font-size: 1.2rem;
+    font-weight: bold;
+    @include responsive(sm){
+        font-size: 1.5rem;
+    }
+   
+}
+
+&__title-pink{
+  color: var(--color-logo-p);
+}
+&__title-gray{
+     color: var(--color-logo-g);
+ }
+&__nav{
+  opacity: 0;
+  transition: .5s;
+}
+&__nav-btn{
+  font-size: 0.75rem;
+  transition: .5s;
+  @include responsive(sm){
+   width: 200px;
+ }
+  @include responsive(md){
+   width: 250px;
+   font-size: 15px;
+   padding: 15px;
+  }
+}
+&__nav-btn:hover{
+ opacity: .5;
+}
+&__nav.scroll{
+  opacity: 1;
+}
+}
+
+.header--scroll.scroll{
+  position: fixed;
+  display: block;
+  width: 100%;
+  z-index: 10;
+  background-color: var(--color-base);
+ }
+// scrollanimation

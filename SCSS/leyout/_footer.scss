@@ -1,0 +1,20 @@
+@use "../responsive/_responsive.scss" as *;
+
+.footer{
+    background-color: var(--color-footer);
+    &__copy{
+        display: block;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--color-base);
+        padding: 3.13rem 0;
+    }
+    &__link{
+     display: block;
+     text-align: center;
+     color: var(--color-base);
+     padding: 1rem 0;
+     text-decoration: underline;
+    }
+}

@@ -1,0 +1,19 @@
+@use"../responsive/_responsive.scss" as *;
+.c-engfont{
+    font-family: "Josefin Sans",sans-serif;
+}
+
+.c-section-title{
+    font-size: 2.5rem;
+    line-height: 1;
+    @include responsive(md){
+        font-size: 4rem;
+    }
+}
+.c-section-subtitle{
+    font-size: 0.875rem;
+    line-height: 1;
+    @include responsive(md){
+        font-size: 1.25rem;
+    }
+}

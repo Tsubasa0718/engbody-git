@@ -1,0 +1,114 @@
+@use "../responsive/_responsive.scss" as *;
+.p-mv{
+   position: relative;
+   height: 410px;
+   margin: 0 auto;
+   padding: 9.375rem 0 0 1.25rem;
+   @include responsive(sm){
+      height: 500px;
+      padding-left: 10%;   
+   }
+   @include responsive(md){
+      max-width: 1600px;
+      margin: 0 auto;
+   }
+   &__title{
+      margin-bottom: 0.625rem;
+      font-size: min(11vw, 90px);
+      font-style: italic;
+      line-height: 1.2;
+      overflow: hidden;
+   }
+   &__slidebg{
+      float: left;
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+   }
+   &__slidebg::before{
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background-color: var(--color-main);
+      transform: translateX(-100%);
+      transition: 1.8s;
+   }
+   &__slidebg.slideOn::before{
+      animation: showmask 1.2s forwards;
+   }
+   &__title-top,
+   &__title-bottom{
+      opacity: 0;
+      background-color: var(--color-base);
+   }
+   &__title-top.opacityOn,
+   &__title-bottom.opacityOn{
+     animation: showElement  .5s 1s forwards;
+   }
+   &__and{
+      font-size: min(9vw, 85px);
+      color: var(--color-main);
+   }
+   &__subtitle{
+      margin-bottom: 0.9375rem;
+      font-size: min(3.5vw, 28px);
+      font-weight: bold;
+      line-height: 1;
+   }
+   &__subtitle-bg{
+      background-color: var(--color-base);
+      }
+  
+   &__image{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    width: 70%;
+    height: 410px;
+    border-radius: 0 0 0 50px;
+    background-image: url(../img/bg_mv.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include responsive(sm){
+      height: 510px;
+      
+   }
+    @include responsive(md){
+      height: 680px;
+      border-radius: 0 0 0 90px;
+    }
+   }
+}
+
+@keyframes showElement {
+   0%{
+       opacity: 0;
+   }
+   100%{
+       opacity: 1;
+   }
+ }
+
+ 
+@keyframes showmask {
+   0%{
+     opacity: 0;
+      transform: translateX(-100%);
+   }   
+  45%,50%{
+      transform: translateX(0%);
+  }
+  90%{
+   opacity: .5;
+  }
+   100%{
+      transform: translateX(100%);
+      opacity: 0;
+   }
+ }
+// aniamation

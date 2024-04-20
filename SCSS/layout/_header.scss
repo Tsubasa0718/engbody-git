@@ -1,0 +1,24 @@
+@use"../foudation/_responsive.scss" as *;
+.l-header{
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    transition: .5s;
+    &__wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__btn{
+       opacity: 0;
+       transition: .5s;
+    }
+    &__btn.header-active{
+        opacity: 1;
+    }
+}
+.l-header.header-active{
+    background-color: var(--color-base);
+   
+}

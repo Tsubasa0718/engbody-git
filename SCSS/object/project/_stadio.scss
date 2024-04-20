@@ -1,0 +1,10 @@
+@use"../responsive/_responsive.scss" as *;
+.p-stadio{
+    &__title{
+     color: #333333;
+    }
+    &__subtitle{
+        display: block;
+        color: var(--color-main);
+    }
+}

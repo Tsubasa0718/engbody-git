@@ -1,0 +1,67 @@
+@use"../responsive/_responsive.scss" as *;
+.p-faq{
+   &__head{
+    margin-bottom: 1.875rem;
+   }
+    &__subtitle{
+        margin-top: 10px;
+        display: block;
+        color: var(--color-main);
+    }
+    &__accordion{
+      margin-top: -1.25rem;
+      &__item{
+        border-bottom: 1px solid #ccc;
+      }
+      &__question{
+        position: relative;
+        font-weight: normal;
+        padding: 1.25rem 1.875rem 0.625rem 0;
+        cursor: pointer;
+      }
+      &__question::after{
+        display: block;
+        content:  "expand_more";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        font-family: "Material Icons Round";
+        font-size: 1.5rem;
+        color: var(--color-main);
+        transform: translateY(-50%);
+      }
+      &__question.active::after{
+        content: "expand_less";
+      }
+      // arrowicon
+      &__question--first{
+        
+      }
+      &__answer{
+        height: 0;
+        overflow: hidden;
+        transition: height 0.2s ease-out;
+      }
+      &__answer.active{
+        height: auto;
+       }
+      &__question--inner,
+      &__answer--inner{
+        display: flex;
+        column-gap: 0.9375rem;
+      }
+     
+      &__label{
+        flex: 0 0 25px;
+        font-size: 1.625rem;
+        font-weight: bold;
+        color: var(--color-main);
+        text-align: center;
+      }
+      &__text{
+       font-size:  0.9375rem;
+       line-height: 1.7;
+        }
+    }
+    
+}

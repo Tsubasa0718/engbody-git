@@ -1,0 +1,29 @@
+@use"../foudation/_responsive.scss" as *;
+.l-footer{
+    background-color: var(--color-footer);
+    &__inner{
+        padding: 3.125rem 0 3.125rem 0;
+        @include responsive(md){
+            padding: 6.25rem 0 6.25rem 0;
+
+        }
+    }
+    &__title{
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+        color: var(--color-base);
+        letter-spacing: .05em;
+        @include responsive(md){
+            font-size: 2rem;
+        }
+    }
+    &__link{
+        display: block;
+        text-align: center;
+        font-size: 1rem;
+        color: var(--color-base);
+        padding-top: 1rem;
+        text-decoration: underline solid 1px #fff;
+    }
+}

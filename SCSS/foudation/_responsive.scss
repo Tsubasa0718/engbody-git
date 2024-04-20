@@ -1,0 +1,14 @@
+@mixin responsive($size){
+    $widht: 0;
+    
+    @if($size == md){
+     $widht: 1025px;   
+     }
+    
+    @if($size == sm){
+     $widht: 600px;
+    }
+    @media screen and (min-width: $widht) {
+      @content;
+    }
+    }

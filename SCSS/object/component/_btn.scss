@@ -1,0 +1,105 @@
+@use"../responsive/_responsive.scss" as *;
+.c-btn{
+    display: inline-block;
+    background-color: var(--color-main);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-base);
+    text-align: center;
+    border-radius: 100px;
+    padding:  12px 15px;
+    letter-spacing: .05em;
+    transition: .5s;
+    @include responsive(md){
+    font-size: 1rem;
+    padding: 16px 15px;
+    }
+    }
+ .c-btn--lg{
+        @extend .c-btn;
+        padding: 20px 10px;
+        width: 220px;
+        @include responsive(md){
+            width: 370px;
+            font-size: 1.25rem;
+            padding: 30px;
+        }
+    }
+    .c-btn--center{
+        @extend .c-btn;
+         padding: 20px 0;
+         width: 300px;
+        @include responsive(md){
+            font-size: 1.25rem;
+            width: 360px;
+            padding: 1.875rem 0;
+        }
+    }
+    .c-btn--center--reserve{
+        @extend .c-btn--center;
+        background-color: var(--color-base);
+        color: var(--color-main);
+    }
+    .c-btn:hover,
+    .c-btn--lg:hover{
+        opacity: .5;
+    }
+    
+    .c-sidebtn{
+        position: fixed;
+        right: 1.25rem;
+        bottom: 1.25rem;
+        z-index: 100;
+        opacity: 0;
+        transition: .5s;
+        &__link{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            border-radius: 50%;
+            background-color: #fff;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            @include responsive(md){
+                width: 80px;
+                height: 80px;
+            }
+            &__icon{
+                position: absolute;
+                top: 35%;
+                left: 37%;
+                display: inline-block;
+                vertical-align: middle;
+                color: var(--color-main);
+                line-height: 1;
+                width: .5em;
+                height: .5em;
+                border: 0.1em solid currentColor;
+                border-left: 0;
+                border-bottom: 0;
+                box-sizing: border-box;
+                transform: translateY(25%) rotate(-45deg);
+                @include responsive(md){
+                    width: 1em;
+                    height: 1em;
+                    border: 0.3em solid currentColor;
+                    border-left: 0;
+                    border-bottom: 0;
+                }
+            }
+            
+        }
+        &__link:hover{
+            opacity: .8;
+        }
+   }
+  .c-sidebtn.sidebtn{
+    opacity: 1;
+  }
+    // sidebtn

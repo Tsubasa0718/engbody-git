@@ -1,0 +1,90 @@
+@use "../responsive/_responsive.scss" as *;
+.p-about {
+   margin-top: 1.25rem;
+   @include responsive(md){
+    font-size: 1.875rem;
+   }
+  &__wrapper{
+    display: grid;
+    row-gap: 1.875rem;
+    @include responsive(md){
+     row-gap: 6.25rem;
+    }
+   }
+  &__box{
+    @include responsive(md){
+        position: relative;
+    }
+  }
+ &__box--reserve{
+    @include responsive(md){
+     display: flex;
+     justify-content: right;
+    }
+ }
+   &__image{
+    width: 100%;
+    @include responsive(md){
+        width: 70%;
+    }  
+}
+  &__desc{
+    position: relative;
+    margin: -0.75rem 1.25rem;
+    border-radius: 8px;
+    padding: 1.5rem 1.875rem 1.875rem 1.875rem;
+    background-color: var(--color-base);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    @include responsive(md){
+        position: absolute;
+        right: 20px;
+        bottom: -20px;
+        width: 555px;
+        margin: 0;
+        padding: 60px;
+    }
+   }
+   &__desc--reserve{
+    @include responsive(md){
+        position: absolute;
+        left: 20px;
+        bottom: -20px;
+        width: 555px;
+        margin: 0;
+        padding: 60px;
+    }
+   }
+   &__title{
+    padding: 1.25rem 0 0.9375rem 0;
+    font-size: 1.375rem;
+    font-weight: bold;
+    line-height: 1.5;
+    @include responsive(md){
+        font-size: 2rem;
+    }
+   }
+   &__subtitle{
+    font-size: 1.125rem;
+    color: var(--color-main);
+    @include responsive(md){
+        font-size: 1.5rem;
+    }
+   } 
+   &__subtitle--food{
+    color: var(--color-food);
+   } 
+   &__text{
+    font-size: 0.875rem;
+    line-height: 1.7;
+    @include responsive(md){
+        font-size: 0.9375rem;
+    }
+   }
+   &__btn{
+    margin-top: 1.5rem;
+    text-align: center;
+    @include responsive(md){
+        margin-top: 4.375rem;
+    }
+   }
+}

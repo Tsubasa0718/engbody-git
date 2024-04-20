@@ -1,0 +1,50 @@
+@charset "utf-8";
+@use"./_responsive.scss" as *;
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+    font-size: 100%;
+    font-feature-settings: "palt";
+}
+
+a {
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+:root{
+    --color-base: #fff;
+    --color-main: #EB51C2;
+    --color-title: #111111;
+    --color-line: #D9D9D9;
+    --color-food: #00B21B;
+    --color-footer: #000;
+}
+
+.l-container{
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 1.875rem;
+}
+
+.pc-only{
+    display: none;
+    @include responsive(md){
+        display: block;
+    }
+}
+.sp-only{
+    display: block;
+    @include responsive(sm){
+        display: none;
+    }
+}

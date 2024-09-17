@@ -1,0 +1,81 @@
+@use "../../foundation/_mixin.scss" as *;
+
+.swiper {
+  position: relative;
+}
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: -30px;
+}
+.swiper-slide {
+  padding: 30px 0 20px 0;
+}
+.swiper-btn-next,
+.swiper-btn-prev {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #1111;
+  cursor: pointer;
+  @include responsive("desktop"){
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.swiper-btn-next {
+  position: absolute;
+  z-index: 1;
+  top: 45%;
+  transform: translateY(-45%); /* 縦方向の中央揃え */
+}
+.swiper-btn-prev {
+  position: absolute;
+  z-index: 1;
+  top: 45%;
+  transform: translateY(-45%); /* 縦方向の中央揃え */
+}
+
+.swiper-btn-prev {
+  left: -10px;
+  @include responsive("desktop") {
+    left: 0;
+  }
+}
+
+.swiper-btn-next {
+  right: -5px;
+  @include responsive("desktop") {
+    right: 0;
+  }
+}
+.arow-left {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 15px 0 0 15px;
+  border-left: 3px solid var(--color-main);
+  border-bottom: 3px solid var(--color-main);
+  transform: rotate(45deg);
+  @include responsive("desktop") {
+    margin: 25px 0 0 20px;
+  }
+}
+.arow-right {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 15px 0 0 10px;
+  border-top: 3px solid var(--color-main);
+  border-right: 3px solid var(--color-main);
+  transform: rotate(45deg);
+  @include responsive("desktop") {
+    margin: 25px 0 0 20px;
+  }
+}
+.swiper-pagination-bullet-active {
+  background: var(--color-main);
+}

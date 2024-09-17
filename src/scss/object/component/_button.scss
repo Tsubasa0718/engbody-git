@@ -1,0 +1,64 @@
+@use "../../foundation/_mixin.scss" as *;
+
+.c-btn {
+  display: inline-block;
+  font-size: space-to-clamp(12,15,375,1440);
+  font-weight: 600;
+  width: space-to-clamp(180,250,375,1440);
+  background-color: var(--color-main);
+  color: #fff;
+  text-align: center;
+  padding:space-to-clamp(12,15,375,1440) 0;
+  white-space: nowrap;
+  border-radius: 100px;
+  transition: .3s all;
+  &:hover{
+    opacity: .7;
+  }
+}
+
+.c-btn--md {
+  @extend .c-btn;
+  font-size: space-to-clamp(13,20,375,1440);
+  width: space-to-clamp(220,370,375,1440);
+  padding:space-to-clamp(20,30,375,1440) 0;
+  letter-spacing: 0.05em;
+}
+
+.c-btn--lg {
+  @extend .c-btn--md;
+  font-size: space-to-clamp(13,20,375,1440);
+  width: space-to-clamp(300,370,375,1440);
+  padding:space-to-clamp(20,30,375,1440) 0;
+}
+.c-btn--rv {
+  @extend .c-btn--lg;
+  background-color: #fff;
+  color: var(--color-main);
+}
+
+.c-side-btn {
+  position: fixed;
+  right: px-to-rem(20px);
+  bottom: px-to-rem(20px);
+  z-index: 100;
+  width:space-to-clamp(40,80,375,1440);
+  height: space-to-clamp(40,80,375,1440);
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: .3s all;
+  visibility: hidden;
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-main);
+    font-size: space-to-clamp(24,48,375,1440);
+  }
+  &.visible{
+    visibility: visible;
+    opacity: 1;
+  }
+}

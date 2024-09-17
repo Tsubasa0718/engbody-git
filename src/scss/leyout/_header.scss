@@ -1,0 +1,20 @@
+@use"../foundation/_mixin.scss" as *;
+
+.l-header {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: space-to-clamp(60, 80, 375, 1440);
+    padding: 0 space-to-clamp(20, 35, 375, 1440);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+    &__logo {
+        @include responsive("desktop"){
+          img{
+         width: 180px;
+        }
+        }
+       }
+}

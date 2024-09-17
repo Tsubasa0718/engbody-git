@@ -1,0 +1,39 @@
+@use "../../foundation/_mixin.scss" as *;
+
+.p-intro {
+  margin-top: px-to-rem(-20px);
+  &__title,
+  &__subtitle {
+    text-align: center;
+  }
+  &__title {
+    font-size: space-to-clamp(56, 108, 375, 1440);
+    font-weight: bold;
+    font-style: italic;
+    color: var(--color-main);
+  }
+  &__subtitle {
+    font-size: space-to-clamp(16, 32, 375, 1440);
+    font-weight: bold;
+    margin-bottom: px-to-rem(25px);
+    line-height: 1.15;
+    letter-spacing: 0.1em;
+    span {
+      color: var(--color-main);
+    }
+  }
+  &__text {
+    font-size: px-to-rem(15px);
+    line-height: 1.8;
+    @include responsive("desktop"){
+      max-width: 720px;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+}
+.br-intro{
+  @include responsive("desktop"){
+    display: none;
+  }
+}

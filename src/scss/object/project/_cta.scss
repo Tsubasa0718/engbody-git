@@ -1,0 +1,25 @@
+@use "../../foundation/_mixin.scss" as *;
+
+.p-cta {
+  margin-top: space-to-clamp(50,70,375,1440);
+  &__image {
+    background-image: url(/dist/images/pc_cta.webp);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: space-to-clamp(180, 370, 375, 1440);
+  }
+  &__body {
+    text-align: center;
+    background-color: var(--color-main);
+    padding: space-to-clamp(30, 50, 375, 1440) 0
+      space-to-clamp(30, 50, 375, 1440) 0;
+  }
+  &__title {
+    font-size: space-to-clamp(26,64,375,1440);
+    color: #fff;
+  }
+  &__btn {
+    margin-top: px-to-rem(15px);
+  }
+}

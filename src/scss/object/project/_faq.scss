@@ -1,0 +1,61 @@
+@use "../../foundation/_mixin.scss" as *;
+.p-faq {
+  &__body {
+    margin-top: px-to-rem(30px);
+  }
+  .accordion {
+    &__item {
+      border-bottom: 1px solid var(--color-line);
+      padding: 20px 30px 15px 0;
+    }
+    &__question {
+      position: relative;
+      padding: 20px 30px 10px 0;
+      font-weight: normal;
+      cursor: pointer;
+      &::after {
+        display: block;
+        content: "expand_more";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        font-family: "Material Icons Round";
+        font-size: 24px;
+        color: var(--color-main);
+        transform: translateY(-50%);
+        transition: transform 0.3s ease;
+      }
+    }
+    &__answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      }
+    &__question,
+    &__answer{
+      font-size: px-to-rem(15px);
+      line-height: 1.6;
+    }
+    
+    &__question--inner,
+    &__answer--inner {
+      display: flex;
+      align-items: center;
+      column-gap: px-to-rem(15px);
+    }
+    &__label {
+      flex: 0 0 25px;
+      font-size: px-to-rem(26px);
+      font-weight: bold;
+      color: var(--color-main);
+      text-align: center;
+    }
+    &__question.active::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+    &__question.active + .accordion__answer {
+      max-height: 700px; /* Adjust this value as needed */
+     }
+  
+  }
+}

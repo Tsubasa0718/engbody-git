@@ -1,0 +1,20 @@
+@use "../foundation/_mixin.scss" as *;
+
+.l-footer {
+  background: var(--color-footer);
+  padding: space-to-clamp(50, 100, 375, 1440);
+  &__logo {
+    text-align: center;
+    font-size: px-to-rem(12px);
+  }
+  &__link{
+    text-align: center;
+    color: #fff;
+    margin-top: space-to-clamp(20,30,375,1440);
+    font-size: space-to-clamp(16,20,375,1440);
+    transition: .3s all;
+    &:hover{
+     text-decoration: underline;
+    }
+  }
+}

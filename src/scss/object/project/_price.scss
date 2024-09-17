@@ -1,0 +1,94 @@
+@use "../../foundation/_mixin.scss" as *;
+
+.p-price {
+  &__wrapper {
+    margin: 0 px-to-rem(-30px);
+    padding-top: px-to-rem(30px);
+  }
+  &__list {
+    position: relative;
+    margin-top: px-to-rem(-25px);
+    padding-top: px-to-rem(25px);
+    padding-right: px-to-rem(20px);
+    white-space: nowrap;
+    overflow-x: auto;
+  @include responsive("desktop"){
+    display: grid;
+    padding-right: 0;
+    column-gap: px-to-rem(15px);
+    grid-template-columns: repeat(3, 1fr);
+  }
+  }
+  &__box {
+    display: inline-block;
+    position: relative;
+    width: 320px;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: px-to-rem(20px);
+    padding: px-to-rem(40px) px-to-rem(20px) 0;
+    @include responsive("desktop"){
+      width: auto;
+      margin: 0;
+    }
+    &__title {
+      font-size: px-to-rem(26px);
+      font-weight: 500;
+      color: var(--color-main);
+      margin-bottom: px-to-rem(10px);
+    }
+    &__price {
+      padding-bottom: px-to-rem(20px);
+    }
+    &__price--money {
+      font-size: px-to-rem(48px);
+      line-height: 1.15;
+      span {
+        font-size: px-to-rem(40px);
+      }
+    }
+    &__price--note {
+      line-height: 1.15;
+    }
+    &__label {
+      position: absolute;
+      top: -24px;
+      left: 50%;
+      width: 80%;
+      z-index: 1;
+      font-size: px-to-rem(20px);
+      font-weight: bold;
+      line-height: 1;
+      color: var(--color-main);
+      padding: 10px;
+      transform: translateX(-50%);
+      border: 2px solid var(--color-main);
+      border-radius: 50px;
+      background-color: #fff;
+    }
+    &__item {
+      padding: px-to-rem(30px);
+      line-height: 1.15;
+      border-top: 1px solid var(--color-line);
+    }
+    &__item--text {
+      margin-top: px-to-rem(5px);
+      font-weight: bold;
+    }
+  }
+  &__scroll {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    font-size: 12px;
+    color: #fff;
+    padding: 10px;
+    transform: translateY(-50%);
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.6);
+    @include responsive("desktop"){
+      display: none;
+    }
+  }
+}

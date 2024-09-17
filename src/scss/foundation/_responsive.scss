@@ -1,0 +1,7 @@
+@mixin responsive($media) {
+  @if $media == "desktop" {
+    @media (min-width: 768px) {
+      @content;
+    } 
+  } 
+}

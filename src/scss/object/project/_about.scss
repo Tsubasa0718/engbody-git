@@ -1,0 +1,68 @@
+@use "../../foundation/_mixin.scss" as *;
+.p-about {
+  margin-top: space-to-clamp(20,30,375,1440);
+ @include responsive("desktop"){
+   
+  }
+  &__wrapper {
+    display: grid;
+    row-gap: space-to-clamp(40,100,375,1440);
+  }
+  &__box{
+    position: relative;
+  }
+  &__box--reserve{
+    @include responsive("desktop"){
+      display: flex;
+      justify-content: flex-end;
+      .p-about__desc{
+        left: -15px;
+      }
+    }
+  }
+  &__image {
+    width: 100%;
+    @include responsive("desktop"){
+      width: 70%;
+    }
+  }
+  &__desc {
+    position: relative;
+    margin: -15px 20px;
+    padding: px-to-rem(40px) px-to-rem(30px) px-to-rem(30px) px-to-rem(30px);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    @include responsive("desktop"){
+      position: absolute;
+      right: 20px;
+      bottom: -20px;
+      width: 555px;
+      margin: 0;
+      padding: 60px;
+    }
+  }
+  &__head {
+    font-size: space-to-clamp(22, 32, 375, 1440);
+    font-weight: bold;
+    line-height: 1.5;
+    margin-bottom: px-to-rem(15px);
+  }
+  &__subhead {
+    font-size: space-to-clamp(18, 24, 375, 1440);
+    line-height: 1.15;
+    color: var(--color-main);
+    margin-bottom: px-to-rem(20px);
+  }
+  .food {
+    color: var(--color-food);
+  }
+  &__text {
+    font-size: space-to-clamp(14, 15, 375, 1440);
+    line-height: 1.7;
+  }
+  &__cta {
+    margin-top: space-to-clamp(40, 70, 375, 1440);
+    text-align: center;
+  }
+}
